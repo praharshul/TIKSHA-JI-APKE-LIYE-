@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentine’s ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Dancing Script", cursive;
+      background: radial-gradient(circle at top, #ff9a9e, #fecfef);
+      text-align: center;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 40px;
+      color: #fff5f5;
+      text-shadow: 2px 2px 8px rgba(255,0,100,0.8);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.8;
+      background: rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 15px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .hearts-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .hearts-bg span {
+      position: absolute;
+      display: block;
+      color: red;
+      font-size: 24px;
+      animation: float 8s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts-bg" id="hearts"></div>
+
+  <h1>Happy Valentine’s Day ❤️ Tiksha</h1>
+  <p>
+    You are the reason my world is so colorful,  
+    the reason my heart beats with joy.  
+    I promise to hold your hand through every storm,  
+    every sunshine, every lifetime.  
+    Forever yours, in this life and beyond. 🌹
+  </p>
+
+  <script>
+    function createBgHeart() {
+      const heart = document.createElement("span");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 5 + 5 + "s";
+      document.getElementById("hearts").appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+    setInterval(createBgHeart, 500);
+  </script>
+</body>
+</html>
